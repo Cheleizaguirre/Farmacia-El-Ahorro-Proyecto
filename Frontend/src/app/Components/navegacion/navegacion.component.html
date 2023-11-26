@@ -11,26 +11,33 @@
         <!--Opcion del SUBMENU Opcion1-->
         <mat-menu #SubMenu1="matMenu">
           <a mat-menu-item href="/cliente">Cliente</a>
-          <a mat-menu-item href="/sucursales">Factura</a>
-          <a mat-menu-item href="/proveedor">Medicina</a>
-          <a mat-menu-item href="/formapago">Cajero</a>
-          <a mat-menu-item href="/areas_trabajo">Orden Entrega</a>
+          <a mat-menu-item href="/factura">Factura</a>
+          <a mat-menu-item href="/medicina">Medicina</a>
+          <a mat-menu-item href="/cajero">Cajero</a>
+          <a mat-menu-item href="/orden_entrega">Orden Entrega</a>
         </mat-menu>
   
         <!--Opcion del SUBMENU Opcion1-->
         <mat-menu #SubMenu2="matMenu">
-            <a mat-menu-item href="/empleados">Laboratorio (Mantenimiento)</a><!--Colocar el nombre del app-routing.module.ts-->
-            <a mat-menu-item href="/tipousuario">Proveedor</a>
+            <a mat-menu-item href="/laboratorio">Laboratorio (Mantenimiento)</a><!--Colocar el nombre del app-routing.module.ts-->
+            <a mat-menu-item href="/proveedor">Proveedor</a>
             
           </mat-menu>
           <button mat-button [matMenuTriggerFor]="menu2">Consultas</button> <!-- Agregar nombre de Menu-->
        
           <mat-menu #menu2="matMenu">
-            <button mat-menu-item [matMenuTriggerFor]="SubMenu3">Opcion1</button>
+            <button mat-menu-item [matMenuTriggerFor]="SubMenu3">Consultas</button>
+            <button mat-menu-item [matMenuTriggerFor]="SubMenu4">Reportes</button>
           
           </mat-menu>
           <mat-menu #SubMenu3="matMenu">
-            <a mat-menu-item href="/navegacion">Inicio (No estoy seguro que se hace aqui)</a><!--Colocar el nombre del app-routing.module.ts-->
+            <a mat-menu-item href="/cliente_consultation">Clientes</a><!--Colocar el nombre del app-routing.module.ts-->
+            <a mat-menu-item href="/medicina_consultation">Medicina</a><!--Colocar el nombre del app-routing.module.ts-->
+
+          </mat-menu>
+          <mat-menu #SubMenu4="matMenu">
+            <a mat-menu-item href="/cliente_report">Clientes</a><!--Colocar el nombre del app-routing.module.ts-->
+            <a mat-menu-item href="/medicina_report">Medicina</a><!--Colocar el nombre del app-routing.module.ts-->
             
           </mat-menu>
         

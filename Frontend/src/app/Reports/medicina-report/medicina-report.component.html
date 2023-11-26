@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">REPORTE DE MEDICINAS</a>
+ 
+  </nav>
+  <br>
+
+  &nbsp;&nbsp; <button (click)="exportToExcel()" class="btn btn-secondary">Exportar a Excel</button>
+  &nbsp;&nbsp; <button class="btn btn-dark" (click)="openPDF()">Descargar PDF</button>`
+
+  <br>
+  <br>
+ <div class="container">  
+  <div class="row mt-25">  
+      
+   <table class="table table-borbered table-hover" id="tabla">
+     <thead>
+        <tr>
+          <th>ID Medicina</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+            <tbody >
+                <tr *ngFor="let User of TUser">
+                  <td >{{User.idmedicina}}</td>
+                  <td >{{User.nombre}}</td>
+                  <td >{{User.precio}}</td>
+                  <td >{{User.estado}}</td>
+                </tr>
+            </tbody>
+    </table>
+  </div>
+ </div>

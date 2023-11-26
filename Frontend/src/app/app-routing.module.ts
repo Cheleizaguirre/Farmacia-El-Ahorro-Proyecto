@@ -6,6 +6,10 @@ import { ClienteComponent } from './Components/cliente/cliente.component';
 import { ClienteEditComponent } from './Components/cliente-edit/cliente-edit.component';
 import { MedicinaComponent } from './Components/medicina/medicina.component';
 import { MedicinaEditComponent } from './Components/medicina-edit/medicina-edit.component';
+import { ClienteConsultationComponent } from './Consultations/cliente-consultation/cliente-consultation.component';
+import { MedicinaConsultationComponent } from './Consultations/medicina-consultation/medicina-consultation.component';
+import { MedicinaReportComponent } from './Reports/medicina-report/medicina-report.component';
+import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.component';
 
 const routes: Routes = [
   {
@@ -21,12 +25,28 @@ const routes: Routes = [
     component:ClienteEditComponent
   },
   {
+    path: 'cliente_consultation',
+    component:ClienteConsultationComponent
+  },
+  {
+    path: 'cliente_report',
+    component:ClienteReportComponent
+  },
+  {
     path: 'medicina',
     component:MedicinaComponent
   },
   {
     path: 'medicina/edit/:id',
     component:MedicinaEditComponent
+  },
+  {
+    path: 'medicina_consultation',
+    component:MedicinaConsultationComponent
+  },
+  {
+    path: 'medicina_report',
+    component:MedicinaReportComponent
   }
 
 ];

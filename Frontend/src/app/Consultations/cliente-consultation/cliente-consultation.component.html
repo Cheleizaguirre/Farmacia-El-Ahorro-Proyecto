@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">CONSULTA DE CLIENTES</a>
+ 
+</nav>
+<br>
+
+<div class="container">  
+    <div class="row mt-25">  
+      <div class="form-group">
+        <input type="text" class="form-control" name="filterPost" placeholder="Digite El Nombre que desea Buscar" [(ngModel)]="filterPost">
+      </div>
+
+<table class="table table-borbered table-hover" id="tabla">
+    <thead>
+       <tr>
+         <th>ID Cliente</th>
+         <th>Nombre</th>
+         <th>Dirrecion</th>
+         <th>Telefono</th>
+         <th>Sexo</th>
+         <th>Estado</th>
+       </tr>
+     </thead>
+   <tbody >
+               <tr *ngFor="let User of TUser | filtercliente:filterPost">
+                 <td >{{User.idcliente}}</td>
+                 <td >{{User.nombre}}</td>
+                 <td >{{User.direccion}}</td>
+                 <td >{{User.telefono}}</td>
+                 <td >{{User.sexo}}</td>
+                 <td >{{User.estado}}</td>
+            
+                </tr>
+

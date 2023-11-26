@@ -21,6 +21,10 @@ import { FilterclientePipe } from './pipes/filtercliente/filtercliente.pipe';
 import { MedicinaComponent } from './Components/medicina/medicina.component';
 import { MedicinaEditComponent } from './Components/medicina-edit/medicina-edit.component';
 import { FiltermedicinaPipe } from './pipes/filtermedicina/filtermedicina.pipe';
+import { ClienteConsultationComponent } from './Consultations/cliente-consultation/cliente-consultation.component';
+import { MedicinaConsultationComponent } from './Consultations/medicina-consultation/medicina-consultation.component';
+import { MedicinaReportComponent } from './Reports/medicina-report/medicina-report.component';
+import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { FiltermedicinaPipe } from './pipes/filtermedicina/filtermedicina.pipe';
     FilterclientePipe,
     MedicinaComponent,
     MedicinaEditComponent,
-    FiltermedicinaPipe
+    FiltermedicinaPipe,
+    ClienteConsultationComponent,
+    MedicinaConsultationComponent,
+    MedicinaReportComponent,
+    ClienteReportComponent
   ],
   imports: [
     BrowserModule,

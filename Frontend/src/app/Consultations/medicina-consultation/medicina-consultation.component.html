@@ -1,0 +1,29 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">CONSULTA DE MEDICINAS</a>
+ 
+  </nav>
+
+<br>
+
+<div class="container">  
+    <div class="row mt-25">  
+      <div class="form-group">
+        <input type="text" class="form-control" name="filterPost" placeholder="Digite El Nombre de la Medicina que desea Buscar" [(ngModel)]="filterPost">
+      </div>
+      
+   <table class="table table-borbered table-hover" id="tabla">
+     <thead>
+        <tr>
+          <th>ID Medicina</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+    <tbody >
+                <tr *ngFor="let User of TUser | filtercliente:filterPost">
+                  <td >{{User.idmedicina}}</td>
+                  <td >{{User.nombre}}</td>
+                  <td >{{User.precio}}</td>
+                  <td >{{User.estado}}</td>
+                </tr>
