@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const path= require('path'); //Para enlazar con el frontend
-const mysql= require('mysql');
+const mysql= require('mysql2');
 const cors = require('cors');
 const myConnection= require('express-myconnection');
 
@@ -27,6 +27,7 @@ app.use(cors(
   //Rutas del Backend
 const clienteRoutes = require('./Routes/cliente');
 const medicinaRoutes = require('./Routes/medicina');
+const proveedorRoutes = require('./Routes/proveedor');
   
 app.set('port', process.env.PORT || 3000);
 
@@ -35,7 +36,7 @@ app.use(morgan('dev'));
 app.use(myConnection(mysql,{
     host:'localhost',
     user:'root',
-    password:'chele123',
+    password:'Perrolola9671',
     port:3306,
     database:'farmacia'
 }, 'single'));
@@ -48,6 +49,7 @@ app.use(bodyParser.json());
 //Rutas de FrontEnd
 app.use('/api/cliente', clienteRoutes);
 app.use('/api/medicina', medicinaRoutes);
+app.use('/api/proveedor', proveedorRoutes);
 
 // archivos estaticos frontend
 app.use(express.static(path.join(__dirname,'public')));

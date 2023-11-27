@@ -67,4 +67,8 @@ export class DataService {
     return this.http.get<any>(this.API_URI+'/cliente')
   }
 
+  getDropListProveedor():Observable<any[]>{
+    return this.http.get<any>(this.API_URI+'/provedor')
+  }
+
 }

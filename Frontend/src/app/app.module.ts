@@ -25,6 +25,9 @@ import { ClienteConsultationComponent } from './Consultations/cliente-consultati
 import { MedicinaConsultationComponent } from './Consultations/medicina-consultation/medicina-consultation.component';
 import { MedicinaReportComponent } from './Reports/medicina-report/medicina-report.component';
 import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.component';
+import { ProveedorComponent } from './Components/proveedor/proveedor.component';
+import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.
     ClienteConsultationComponent,
     MedicinaConsultationComponent,
     MedicinaReportComponent,
-    ClienteReportComponent
+    ClienteReportComponent,
+    ProveedorComponent,
+    ProveedorEditComponent
   ],
   imports: [
     BrowserModule,

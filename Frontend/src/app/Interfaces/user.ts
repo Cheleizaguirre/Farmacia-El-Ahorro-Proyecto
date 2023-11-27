@@ -7,6 +7,14 @@ export interface cliente{
   estado?: string;
 }
 
+export interface proveedor{
+  idproveedor?: number | null;
+  nombre?: string | null;
+  telefono?: string | null;
+  sexo?: string | null;
+  estado?: string;
+}
+
 export interface medicina{
   idmedicina?: number | null;
   nombre?: string | null;
