@@ -12,6 +12,7 @@ import { MedicinaConsultationComponent } from './Consultations/medicina-consulta
 import { MedicinaReportComponent } from './Reports/medicina-report/medicina-report.component';
 import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.component';
 import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-edit.component';
+import { OrdenEntregaComponent } from './Components/orden-entrega/orden-entrega.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'cliente',
     component:ClienteComponent
+  },
+  {
+    path: 'orden_entrega',
+    component:OrdenEntregaComponent
   },
   {
     path: 'cliente/edit/:id',

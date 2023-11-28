@@ -27,6 +27,7 @@ import { MedicinaReportComponent } from './Reports/medicina-report/medicina-repo
 import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.component';
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-edit.component';
+import { OrdenEntregaComponent } from './Components/orden-entrega/orden-entrega.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-ed
     MedicinaReportComponent,
     ClienteReportComponent,
     ProveedorComponent,
-    ProveedorEditComponent
+    ProveedorEditComponent,
+    OrdenEntregaComponent
   ],
   imports: [
     BrowserModule,

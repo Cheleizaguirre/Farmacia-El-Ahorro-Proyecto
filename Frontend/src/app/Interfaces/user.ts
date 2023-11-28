@@ -7,6 +7,16 @@ export interface cliente{
   estado?: string;
 }
 
+export interface orden_entrega{
+  idorden_entrega?: number | null;
+  idlaboratorio?: number | null;
+  idproveedor?: number | null;
+  idmedicina?: number | null;
+  cantidad_medicina?: number | null;
+  fecha?: number | null;
+  estado?: string;
+}
+
 export interface proveedor{
   idproveedor?: number | null;
   nombre?: string | null;
@@ -27,3 +37,4 @@ export interface User{
   descripcion?: string;
   estado?: string;
 }
+
