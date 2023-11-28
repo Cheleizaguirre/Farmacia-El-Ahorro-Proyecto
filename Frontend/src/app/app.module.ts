@@ -27,6 +27,11 @@ import { MedicinaReportComponent } from './Reports/medicina-report/medicina-repo
 import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.component';
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-edit.component';
+import { FacturaComponent } from './Components/factura/factura.component';
+import { CajeroComponent } from './Components/cajero/cajero.component';
+import { FiltercajeroPipe } from './pipes/filtercajero/filtercajero.pipe';
+import { FilterfacturaPipe } from './pipes/filterfactura/filterfactura.pipe';
+
 
 
 @NgModule({
@@ -44,7 +49,11 @@ import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-ed
     MedicinaReportComponent,
     ClienteReportComponent,
     ProveedorComponent,
-    ProveedorEditComponent
+    ProveedorEditComponent,
+    FacturaComponent,
+    CajeroComponent,
+    FiltercajeroPipe,
+    FilterfacturaPipe
   ],
   imports: [
     BrowserModule,

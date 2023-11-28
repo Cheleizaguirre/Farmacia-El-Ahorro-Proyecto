@@ -1,0 +1,36 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">REGISTRO DE CAJEROS</a>
+</nav>
+ <div class="container">  
+    <div class="row mt-25">  
+      <div class="form-group">
+        <input type="text" class="form-control" name="filterPost" placeholder="Digite el ID del cajero que desea buscar" [(ngModel)]="filterPost">
+      </div>
+      
+   <table class="table table-borbered table-hover" id="tabla">
+     <thead>
+        <tr>
+          <th>ID Cajero</th>
+          <th>Nombre</th>
+          <th>Horario</th>
+          <th>Salario</th>
+          <th>Estado</th>
+          <th>EXPORTAR A PDF/EXCEL</th>
+        </tr>
+      </thead>
+    <tbody >
+                <tr *ngFor="let User of TUser | filtercliente:filterPost">
+                  <td >{{User.idcajero}}</td>
+                  <td >{{User.nombre}}</td>
+                  <td >{{User.horario}}</td>
+                  <td >{{User.salario}}</td>
+                  <td >{{User.estado}}</td>
+                  <td>
+                   &nbsp;&nbsp; <button (click)="exportToExcel()" class="btn btn-secondary">Exportar a Excel</button>
+                   &nbsp;&nbsp; <button class="btn btn-dark" (click)="openPDF()">Descargar PDF</button>
+                </td>
+                  </tr>
+     </tbody>
+   </table>
+</div>
+</div>

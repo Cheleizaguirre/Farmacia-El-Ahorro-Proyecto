@@ -71,4 +71,8 @@ export class DataService {
     return this.http.get<any>(this.API_URI+'/provedor')
   }
 
+  getDropListCajero():Observable<any[]>{
+    return this.http.get<any>(this.API_URI+'/cajero')
+  }
+
 }

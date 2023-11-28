@@ -22,6 +22,23 @@ export interface medicina{
   estado?: string;
 }
 
+export interface factura {
+  idfactura?: number | null;
+  idcliente?: number | null;
+  idcajero?: number | null;
+  total?: string | null;
+  impuesto?: string | null;
+  fecha?: Date;
+}
+
+export interface cajero {
+  idcajero?: number | null;
+  nombre?: string | null;
+  horario?: string | null;
+  salario?: number | null;
+  estado?: string;
+}
+
 export interface User{
   ctipou?: number;
   descripcion?: string;

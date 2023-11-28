@@ -12,6 +12,8 @@ import { MedicinaConsultationComponent } from './Consultations/medicina-consulta
 import { MedicinaReportComponent } from './Reports/medicina-report/medicina-report.component';
 import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.component';
 import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-edit.component';
+import { FacturaComponent } from './Components/factura/factura.component';
+import { CajeroComponent } from './Components/cajero/cajero.component';
 
 const routes: Routes = [
   {
@@ -58,9 +60,14 @@ const routes: Routes = [
     path: 'medicina_report',
     component:MedicinaReportComponent
   },
-  
- 
-
+  {
+    path: 'factura',
+    component: FacturaComponent
+  },
+  {
+    path: 'cajero',
+    component: CajeroComponent
+  }
 ];
 
 @NgModule({
