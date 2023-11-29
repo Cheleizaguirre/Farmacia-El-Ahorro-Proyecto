@@ -74,5 +74,12 @@ export class DataService {
   getDropListOrden_entrega():Observable<any[]>{
     return this.http.get<any>(this.API_URI+'/orden_entrega')
   }
+  getDropListidlaboratorio():Observable<any[]>{
+    return this.http.get<any>(this.API_URI+'/idlaboratorio')
+  }
+  getDropListidmedicina():Observable<any[]>{
+    return this.http.get<any>(this.API_URI+'/idmedicina')
+  }
+  
 
 }

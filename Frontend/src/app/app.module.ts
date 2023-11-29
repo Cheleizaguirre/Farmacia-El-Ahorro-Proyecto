@@ -28,6 +28,8 @@ import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-edit.component';
 import { OrdenEntregaComponent } from './Components/orden-entrega/orden-entrega.component';
+import { Filter_orden_entregaPipe } from './pipes/filtro-orden-entrega.pipe';
+import { OrdenEntregaeditComponent } from './Components/orden-entregaedit/orden-entregaedit.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { OrdenEntregaComponent } from './Components/orden-entrega/orden-entrega.
     ClienteReportComponent,
     ProveedorComponent,
     ProveedorEditComponent,
-    OrdenEntregaComponent
+    OrdenEntregaComponent,
+    Filter_orden_entregaPipe,
+    OrdenEntregaeditComponent
   ],
   imports: [
     BrowserModule,

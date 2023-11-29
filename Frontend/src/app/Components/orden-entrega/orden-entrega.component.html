@@ -1,84 +1,81 @@
-<p>orden-entrega works!</p>
 <nav class="navbar navbar-dark bg-dark">
-    <a href="/" class="navbar-brand">REGISTRO DE ORDENES DE ENTREGA</a>
- 
-  </nav>
+  <a href="/" class="navbar-brand">REGISTRO DE ORDEN DE ENTREGA</a>
 
-  <div class="agregar_contenedor"></div>
-  <div class="row mt-5">
-  <div class="card">
-      <div class="card-body">
-          <form id="formulario" name="formulario" #f="ngForm" (ngSubmit)="AgregarValor()" novalidate >
-            <div class="form-group">
-              <label for="" class="control-label" hidden>ID ORDEN ENTREGA</label>
-                    <input type="text"  readonly="readonly"  [(ngModel)]="user.idorden_entrega" name="idorden_entrega" placeholder="No" class="form-control" required hidden>
-                    </div>                  
+</nav>
+
+<div class="agregar_contenedor"></div>
+<div class="row mt-5">
+<div class="card">
+    <div class="card-body">
+        <form id="formulario" name="formulario" #f="ngForm" (ngSubmit)="AgregarValor()" novalidate >
+          <div class="form-group">
+            <label for="" class="control-label" hidden>orden-entrega</label>
+                  <input type="text"  readonly="readonly"  [(ngModel)]="user.idorden_entrega" name="idorden_entrega" placeholder="No" class="form-control" required hidden>
+                  </div>
+                  <div class="form-group">
+                    <option>Seleccione el laboratorio</option>
+                      <select class="form-control" size="1" [(ngModel)]="user.idlaboratorio" name="idlab" required>
+                             <option *ngFor="let lista of listalab" value={{lista.idlaboratorio}}>{{lista.nombre}}</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <option>Seleccione el Proveedor</option>
+                      <select class="form-control" size="1" [(ngModel)]="user.idproveedor" name="idprov" required>
+                             <option *ngFor="let lista of listaprov" value={{lista.idproveedor}}>{{lista.nombre}}</option>
+                    </select>
+                  </div>                
 
                   <div class="form-group">
-                    <label for="" class="control-label" hidden>ID LABORATORIO</label>
-                    <input type="text"  readonly="readonly"  [(ngModel)]="user.idlaboratorio" name="idlaboratorio" placeholder="No" class="form-control" required hidden>
-                    </div> 
+                    <option>Seleccione Medicina</option>
+                      <select class="form-control" size="1" [(ngModel)]="user.idmedicina" name="idlab" required>
+                             <option *ngFor="let lista of listamed" value={{lista.idmedicina}}>{{lista.nombre}}</option>
+                    </select>
+                  </div>
 
-             <div class="form-group">
-                <label for="" class="control-label" hidden>ID PROVEEDORES</label>
-                <input type="text"  readonly="readonly"  [(ngModel)]="user.idproveedor" name="idproveedor" placeholder="No" class="form-control" required hidden>
-                </div> 
+           <div class="form-group">
+            <label for="" class="control-label">cantidad_medicina</label>
+            <input type="text"  [(ngModel)]="user.cantidad_medicina"  name="precio" placeholder="DIGITE CANTIDAD DE MEDICINA"  class="form-control" autofocus>
+           </div>
 
-             <div class="form-group">
-                <label for="" class="control-label" hidden>ID MEDICINA</label>
-                <input type="text"  readonly="readonly"  [(ngModel)]="user.idmedicina" name="idmedicina" placeholder="No" class="form-control" required hidden>
-                </div> 
+          <button type="submit" class="btn btn-primary" formnovalidate value="Save"  onclick="javascript:alert('Registro Almacenado')">
+              Agregar
+          </button>
+          &nbsp;&nbsp; <button (click)="exportToExcel()" class="btn btn-secondary">Exportar a Excel</button>
+        &nbsp;&nbsp; <button class="btn btn-dark" (click)="openPDF()">Descargar PDF</button>`
+        </form>
+    </div>
+</div>
+</div>
+<br>
 
-             <div class="form-group">
-              <label for="" class="control-label">CANTIDAD DE MEDICINA</label>
-              <input type="text"  [(ngModel)]="user.cantidad_medicina"  name="cantidad_medicina" placeholder="DIGITE LA CANTIDAD DE MEDICINA"  class="form-control" autofocus>
-             </div>
+<div class="container">  
+  <div class="row mt-25">  
+    <div class="form-group">
+      <input type="text" class="form-control" name="filterPost" placeholder="Digite El Nombre de la orden-entrega que desea Buscar" [(ngModel)]="filterPost">
+    </div>
+    
+    <table class="table table-borbered table-hover" id="tabla">
+      <thead>
+         <tr>
+           <th>Id orden-entrega</th>
+           <th>Id laboratorio</th>
+           <th>Id proveedor</th>
+           <th>Id medicina</th>
+           <th>cantidad_medicina</th>
+           <th>Estado</th>
+         </tr>
+       </thead>
+  <tbody >
+    <tr *ngFor="let User of TUser | filterorden_entrega:filterPost">
+      <td >{{User.idorden_entrega}}</td>
+      <td >{{User.idlaboratorio}}</td>
+      <td >{{User.idproveedor}}</td>
+      <td >{{User.idmedicina}}</td>
+      <td >{{User.cantidad_medicina}}</td>
+      <td >{{User.estado}}</td>
+      </tr>
 
-            <button type="submit" class="btn btn-primary" formnovalidate value="Save"  onclick="javascript:alert('Registro Almacenado')">
-                Agregar
-            </button>
-            &nbsp;&nbsp; <button (click)="exportToExcel()" class="btn btn-secondary">Exportar a Excel</button>
-          &nbsp;&nbsp; <button class="btn btn-dark" (click)="openPDF()">Descargar PDF</button>`
-          </form>
-      </div>
-  </div>
-  </div>
-  <br>
-
- <div class="container">  
-    <div class="row mt-25">  
-      <div class="form-group">
-        <input type="text" class="form-control" name="filterPost" placeholder="Digite El Nombre que desea Buscar" [(ngModel)]="filterPost">
-      </div>
-      
-   <table class="table table-borbered table-hover" id="tabla">
-     <thead>
-        <tr>
-          <th>Id orden-entrega</th>
-          <th>Id laboratorio</th>
-          <th>Id proveedor</th>
-          <th>Id medicina</th>
-          <th>cantidad_medicina</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-    <tbody >
-                   <tr *ngFor="let User of TUser | filtercliente:filterPost">
-                  <td >{{User.idorden_entrega}}</td>
-                  <td >{{User.idlaboratorio}}</td>
-                  <td >{{User.idproveedor}}</td>
-                  <td >{{User.idmedicina}}</td>
-                  <td >{{User.cantidad_medicina}}</td>
-                  <td >{{User.estado}}</td>
-                  <td>  <button  class="btn btn-danger"  (click)="EliminarData(User.idorden_entrega)" onclick="javascript:alert('Registro Eliminado')" >Eliminar</button> </td>
-                    <td>
-                      <button  class="btn btn-success" [routerLink]="['/orden-entrega/edit', User.idorden_entrega]">
-                        Actualizar
-                   </button>
-                </td>
-                  </tr>
-  
-     </tbody>
-   </table>
+   </tbody>
+ </table>
 </div>
 </div>

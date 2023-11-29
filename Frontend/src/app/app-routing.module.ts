@@ -13,6 +13,7 @@ import { MedicinaReportComponent } from './Reports/medicina-report/medicina-repo
 import { ClienteReportComponent } from './Reports/cliente-report/cliente-report.component';
 import { ProveedorEditComponent } from './Components/proveedor-edit/proveedor-edit.component';
 import { OrdenEntregaComponent } from './Components/orden-entrega/orden-entrega.component';
+import {OrdenEntregaeditComponent } from './Components/orden-entregaedit/orden-entregaedit.component';
 
 const routes: Routes = [
   {
@@ -63,7 +64,10 @@ const routes: Routes = [
     path: 'medicina_report',
     component:MedicinaReportComponent
   },
-  
+  {
+    path: 'orden_entrega/edit/:id',
+    component:OrdenEntregaeditComponent
+  },
  
 
 ];
