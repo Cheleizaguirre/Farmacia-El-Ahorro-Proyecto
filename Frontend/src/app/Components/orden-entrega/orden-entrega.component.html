@@ -12,25 +12,6 @@
             <label for="" class="control-label" hidden>orden-entrega</label>
                   <input type="text"  readonly="readonly"  [(ngModel)]="user.idorden_entrega" name="idorden_entrega" placeholder="No" class="form-control" required hidden>
                   </div>
-                  <div class="form-group">
-                    <option>Seleccione el laboratorio</option>
-                      <select class="form-control" size="1" [(ngModel)]="user.idlaboratorio" name="idlab" required>
-                             <option *ngFor="let lista of listalab" value={{lista.idlaboratorio}}>{{lista.nombre}}</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <option>Seleccione el Proveedor</option>
-                      <select class="form-control" size="1" [(ngModel)]="user.idproveedor" name="idprov" required>
-                             <option *ngFor="let lista of listaprov" value={{lista.idproveedor}}>{{lista.nombre}}</option>
-                    </select>
-                  </div>                
-
-                  <div class="form-group">
-                    <option>Seleccione Medicina</option>
-                      <select class="form-control" size="1" [(ngModel)]="user.idmedicina" name="idlab" required>
-                             <option *ngFor="let lista of listamed" value={{lista.idmedicina}}>{{lista.nombre}}</option>
-                    </select>
-                  </div>
 
            <div class="form-group">
             <label for="" class="control-label">cantidad_medicina</label>
