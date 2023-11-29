@@ -1,0 +1,32 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">CONSULTA DE LABORATORIO</a>
+ 
+</nav>
+<br>
+
+<div class="container">  
+    <div class="row mt-25">  
+      <div class="form-group">
+        <input type="text" class="form-control" name="filterPost" placeholder="Digite El Nombre que desea Buscar" [(ngModel)]="filterPost">
+      </div>
+
+<table class="table table-borbered table-hover" id="tabla">
+    <thead>
+       <tr>
+        <th>ID Laboratorio</th>
+        <th>Nombre</th>
+        <th>Direcion</th>
+        <th>Telefono</th>
+        <th>Estado</th>
+       </tr>
+     </thead>
+   <tbody >
+               <tr *ngFor="let User of TUser | filterlaboratorio:filterPost">
+                <td >{{User.idlaboratorio}}</td>
+                <td >{{User.nombre}}</td>
+                <td >{{User.direccion}}</td>
+                <td >{{User.telefono}}</td>
+                <td >{{User.estado}}</td>
+            
+                </tr>
+

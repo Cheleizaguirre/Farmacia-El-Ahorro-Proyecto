@@ -27,6 +27,7 @@ app.use(cors(
   //Rutas del Backend
 const clienteRoutes = require('./Routes/cliente');
 const medicinaRoutes = require('./Routes/medicina');
+const laboratorioRoutes = require('./Routes/laboratorio');
 const proveedorRoutes = require('./Routes/proveedor');
   
 app.set('port', process.env.PORT || 3000);
@@ -36,7 +37,7 @@ app.use(morgan('dev'));
 app.use(myConnection(mysql,{
     host:'localhost',
     user:'root',
-    password:'Perrolola9671',
+    password:'Diosesamor16',
     port:3306,
     database:'farmacia'
 }, 'single'));
@@ -49,6 +50,7 @@ app.use(bodyParser.json());
 //Rutas de FrontEnd
 app.use('/api/cliente', clienteRoutes);
 app.use('/api/medicina', medicinaRoutes);
+app.use('/api/laboratorio', laboratorioRoutes);
 app.use('/api/proveedor', proveedorRoutes);
 
 // archivos estaticos frontend
