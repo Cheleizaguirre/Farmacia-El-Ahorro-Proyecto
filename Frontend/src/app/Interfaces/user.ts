@@ -22,6 +22,14 @@ export interface medicina{
   estado?: string;
 }
 
+export interface laboratorio{
+  idlaboratorio?: number | null;
+  nombre?: string | null;
+  direccion?: string | null;
+  telefono?: string | null;
+  estado?: string;
+}
+
 export interface User{
   ctipou?: number;
   descripcion?: string;
